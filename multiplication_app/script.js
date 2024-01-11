@@ -16,7 +16,12 @@ questionEl.innerText = `What is ${num1} multiply by ${num2}?`;
 scoreEl.innerText = `Score: ${score}`;
 console.log('input is ' + inputEl.value);
 const ans = num1 * num2;
-
+submitBtn.disabled=true;
+formEl.addEventListener("input",()=>{
+    if (inputEl.value !== ''){
+        submitBtn.disabled=false;
+    }
+})
 formEl.addEventListener("submit",()=>{
     const userInput = +inputEl.value;
 
